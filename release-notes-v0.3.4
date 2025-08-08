@@ -1,0 +1,53 @@
+🚀 What’s new
+Bundled parsers (no setup): pdf.js + pdf.worker and mammoth.browser included locally — just load the extension and go.
+
+Upload once → Fill anywhere: Upload a PDF or DOCX resume in the popup, save, then click Update my information & Fill.
+
+Floating on-page button: A small “Update my information” bubble appears on application pages for one-click fill.
+
+ATS coverage: Tuned heuristics for Greenhouse, Lever, Workday, plus many generic forms.
+
+Best-effort file attach: Tries to attach your resume to file inputs via drag-and-drop (falls back to manual if the site blocks it).
+
+Local-only privacy: All data stays in browser local storage. No network calls, no trackers.
+
+🛠 How it works
+Open the extension → Upload resume (PDF/DOCX).
+
+Review the extracted fields and Save.
+
+On a job application page, click the floating button or use the popup’s Update my information & Fill.
+
+You’ll see a toast like “ApplyEasy filled 18 field(s)”.
+
+📦 Install / Update (Chrome)
+Download the ZIP from this release and unzip it.
+
+Go to chrome://extensions → enable Developer mode.
+
+Click Load unpacked → select the unzipped folder.
+
+(Optional) Pin the extension to your toolbar.
+
+⚠ Notes / Limitations
+Some sites block programmatic file selection. Text fields will fill; you may still need to click the file picker to attach the resume file.
+
+If a form loads inside an iframe or SPA stepper, wait a second after opening the form before clicking Fill.
+
+✅ Verified on
+Greenhouse app pages
+
+Lever application forms
+
+Workday job app flows (after starting application)
+
+Several generic HTML forms
+
+🔧 Known issues
+Very unusual label text or custom widgets may need a second click or minor manual edits.
+
+Multi-page Workday wizards sometimes delay inputs; give it a moment, then click Fill again.
+
+Assets:
+
+ApplyEasy-Ready-v0.3.4.zip (ready-to-load Chrome extension)
