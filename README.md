@@ -1,48 +1,101 @@
-# ApplyEasy
-*Stress‑free, breezy resume autofiller by Eric Hilerio*
+ApplyEasy – Stress-Free, Breezy Resume Autofiller
+by Eric Hilerio
 
-**ApplyEasy** autofills common job application fields on Greenhouse, Lever, and LinkedIn Easy Apply. It includes a Resume Vault and one‑click Attach Resume button, plus optional PDF→Profile suggestions.
+A lightweight browser extension that autofills job application forms using a profile you set once.
+Works on Greenhouse, Lever, and Workday — with support for more ATS coming soon.
 
-## ✨ Features
-- Autofill for common ATS fields (Greenhouse/Lever/LinkedIn Easy Apply)
-- **Resume Vault**: store multiple resumes and attach fast
-- **Attach Resume** button next to file inputs
-- **Optional** PDF→Profile suggestions (extracts contact info from your resume)
-- Update checker (set your repo under Options → Updates)
+🚀 Features
+🔄 Auto-Run (New in v0.3.0)
+Instantly fills supported application forms when the page loads:
 
-## 🧩 Install (Unpacked)
-1. Download the **latest release ZIP**
-2. Unzip it
-3. Go to `chrome://extensions` → toggle **Developer mode**
-4. Click **Load unpacked** and select the unzipped folder
+Greenhouse
 
-> Safari: Use Xcode → *File → New → Project… → Safari Web Extension App* → point to this folder, then build and enable in Safari.
+Lever
 
-## 🔎 PDF Parsing (optional)
-To enable PDF→Profile suggestions, add **pdf.js** files locally:
-- Place `lib/pdf.min.js` and `lib/pdf.worker.min.js` in the extension folder
-- Reload the extension
+Workday
 
-> Download from Mozilla’s pdf.js releases. If these files are missing, ApplyEasy still works; it just skips parsing.
+⚡ One-Click Fill Anywhere
+Right-click context menu: ApplyEasy → Fill this page
 
-## 🔧 Usage
-- Open a job application page → click **ApplyEasy → Fill this page**
-- For resume inputs, click **Attach Resume** and pick one from your Vault
-- Manage your profile/resumes under **Options**
+Keyboard shortcut: Alt+F (customizable in your browser)
 
-## 🔒 Notes & Limits
-- Browsers block true auto‑attaching files; ApplyEasy downloads your chosen resume and opens the picker for you to confirm
-- Parsing is heuristic and works best on text‑based PDFs (not scanned images)
+Popup button for manual fill on any supported site
 
-## 🗺 Roadmap
-- Workday / iCIMS / Taleo / SuccessFactors selectors
-- Per‑role resume tagging
-- Optional OCR for scanned PDFs
+🧠 Smarter Autofill Engine
+Detects fields inside shadow DOM and iframes
 
-## 🆕 Changelog
-- **v0.2.2** — PDF→Profile suggestions (optional pdf.js), improvements
-- **v0.2.1** — Rebrand to ApplyEasy
-- **v0.2.0** — Resume Vault + Update checker
+Matches by label, placeholder, aria-label, autocomplete, and more
+
+Fires proper input and change events for compatibility with React, Vue, Angular, etc.
+
+🎯 Custom Field Mappings
+Map site-specific labels to your profile fields
+(Example: "Preferred Name" → firstName)
+
+📦 Profile Import / Export
+Backup your settings to JSON
+
+Restore or migrate to another browser instantly
+
+📂 Resume Vault
+Store multiple resumes securely inside the extension
+
+Quickly download them to your Downloads folder when file pickers appear
+
+📥 Installation
+Chrome / Edge (Unpacked)
+Download the latest .zip from Releases.
+
+Extract it somewhere on your computer.
+
+Open chrome://extensions or edge://extensions.
+
+Toggle Developer mode on.
+
+Click Load unpacked and select the extracted folder.
+
+🛠 Usage
+Click the ApplyEasy icon → Options → Fill in your profile details.
+
+(Optional) Upload your resumes to the Resume Vault.
+
+Visit a supported job application page:
+
+Auto-run: ApplyEasy will fill it automatically.
+
+Manual: Use the popup, context menu, or shortcut Alt+F.
+
+Select your resume in the file picker when prompted.
+
+📝 Supported Sites
+Greenhouse
+
+Lever
+
+Workday
+(More ATS coming soon — see Contributing)
+
+⚠ Notes & Limitations
+File uploads cannot be automated due to browser security restrictions — you must select the file manually when prompted.
+
+Auto-run is only enabled for listed supported sites.
+
+Fields are matched heuristically — always review before submitting.
+
+🤝 Contributing
+Want to add support for more Applicant Tracking Systems (ATS)?
+
+Fork the repo.
+
+Add the site’s domain to manifest.json → host_permissions.
+
+Extend the form-filling logic in content.js.
+
+Submit a Pull Request.
+
+📄 License
+MIT License © Eric Hilerio
+
 
 ## 📜 License
 MIT — see [LICENSE](LICENSE)
