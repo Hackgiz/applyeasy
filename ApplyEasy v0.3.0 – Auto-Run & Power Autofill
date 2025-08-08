@@ -1,0 +1,56 @@
+🚀 ApplyEasy v0.3.0 – Auto-Run & Power Autofill
+✨ New Features
+Auto-Run on Supported Sites
+Automatically fills forms when you open:
+
+Greenhouse
+
+Lever
+
+Workday
+
+One-Click Fill Everywhere
+
+Right-click context menu: “ApplyEasy: Fill this page”
+
+Keyboard shortcut: Alt+F (configurable in browser extension settings)
+
+Smarter Autofill Engine
+
+Detects inputs inside shadow DOM and iframes
+
+Matches field labels, placeholders, aria-labels, and autocomplete attributes
+
+Higher accuracy on complex forms
+
+Custom Field Mappings (Advanced)
+Map any site-specific field label to a profile value (e.g., “Preferred Name” → firstName).
+
+Profile Import/Export
+
+Backup all settings and profiles to JSON
+
+Restore or migrate to another browser instantly
+
+🛠 Improvements
+Properly dispatches input & change events for compatibility with reactive forms (React, Vue, Angular, etc.)
+
+Added contextMenus and commands permissions to manifest
+
+Faster form scanning on large/complex application pages
+
+📦 Install / Update Instructions
+Download the latest .zip from this release.
+
+Open chrome://extensions (or edge://extensions).
+
+Enable Developer mode (toggle in top right).
+
+Click Update (if already loaded) or Load unpacked and select the extracted folder.
+
+⚠ Notes
+Auto-run currently supports Greenhouse, Lever, and Workday.
+
+Manual mode still works via popup, context menu, or shortcut.
+
+File uploads remain manual due to browser security policies.
