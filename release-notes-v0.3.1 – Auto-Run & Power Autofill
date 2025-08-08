@@ -1,0 +1,30 @@
+What’s new (v0.3.1)
+“Update my information” button in the popup.
+Click it on any job site and the extension:
+
+pulls data from your default stored resume (PDF/DOCX),
+
+updates your saved ApplyEasy profile, then
+
+fills the page.
+
+Default resume picker (Options → Default Resume).
+Choose which uploaded resume powers the update.
+
+Resume parsing on upload.
+When you add a resume in Options, the extension parses it and caches a profile (name, email, phone, city/state/ZIP, headline, LinkedIn).
+
+PDF parsing uses pdf.js (already wired).
+
+DOCX parsing is supported if you drop mammoth.browser.min.js into lib/ (optional). If you don’t want to add it, just upload a PDF.
+
+Download
+ApplyEasy v0.3.1 — Update Info
+
+How to use it
+Load the extension (unpacked) or update your existing one.
+
+Open Options → upload your PDF/DOCX → pick Default Resume.
+
+Go to a job application. Open the extension popup → Update my information.
+It updates your profile from that resume, then runs autofill on the page.
