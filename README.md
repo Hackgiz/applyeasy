@@ -4,94 +4,56 @@ by Eric Hilerio
 A lightweight browser extension that autofills job application forms using a profile you set once.
 Works on Greenhouse, Lever, and Workday — with support for more ATS coming soon.
 
-🚀 Features
-🔄 Auto-Run (New in v0.3.0)
-Instantly fills supported application forms when the page loads:
+🚀 What’s new
+Bundled parsers (no setup): pdf.js + pdf.worker and mammoth.browser included locally — just load the extension and go.
 
-Greenhouse
+Upload once → Fill anywhere: Upload a PDF or DOCX resume in the popup, save, then click Update my information & Fill.
 
-Lever
+Floating on-page button: A small “Update my information” bubble appears on application pages for one-click fill.
 
-Workday
+ATS coverage: Tuned heuristics for Greenhouse, Lever, Workday, plus many generic forms.
 
-⚡ One-Click Fill Anywhere
-Right-click context menu: ApplyEasy → Fill this page
+Best-effort file attach: Tries to attach your resume to file inputs via drag-and-drop (falls back to manual if the site blocks it).
 
-Keyboard shortcut: Alt+F (customizable in your browser)
+Local-only privacy: All data stays in browser local storage. No network calls, no trackers.
 
-Popup button for manual fill on any supported site
+🛠 How it works
+Open the extension → Upload resume (PDF/DOCX).
 
-🧠 Smarter Autofill Engine
-Detects fields inside shadow DOM and iframes
+Review the extracted fields and Save.
 
-Matches by label, placeholder, aria-label, autocomplete, and more
+On a job application page, click the floating button or use the popup’s Update my information & Fill.
 
-Fires proper input and change events for compatibility with React, Vue, Angular, etc.
+You’ll see a toast like “ApplyEasy filled 18 field(s)”.
 
-🎯 Custom Field Mappings
-Map site-specific labels to your profile fields
-(Example: "Preferred Name" → firstName)
+📦 Install / Update (Chrome)
+Download the ZIP from this release and unzip it.
 
-📦 Profile Import / Export
-Backup your settings to JSON
+Go to chrome://extensions → enable Developer mode.
 
-Restore or migrate to another browser instantly
+Click Load unpacked → select the unzipped folder.
 
-📂 Resume Vault
-Store multiple resumes securely inside the extension
+(Optional) Pin the extension to your toolbar.
 
-Quickly download them to your Downloads folder when file pickers appear
+⚠ Notes / Limitations
+Some sites block programmatic file selection. Text fields will fill; you may still need to click the file picker to attach the resume file.
 
-📥 Installation
-Chrome / Edge (Unpacked)
-Download the latest .zip from Releases.
+If a form loads inside an iframe or SPA stepper, wait a second after opening the form before clicking Fill.
 
-Extract it somewhere on your computer.
+✅ Verified on
+Greenhouse app pages
 
-Open chrome://extensions or edge://extensions.
+Lever application forms
 
-Toggle Developer mode on.
+Workday job app flows (after starting application)
 
-Click Load unpacked and select the extracted folder.
+Several generic HTML forms
 
-🛠 Usage
-Click the ApplyEasy icon → Options → Fill in your profile details.
+🔧 Known issues
+Very unusual label text or custom widgets may need a second click or minor manual edits.
 
-(Optional) Upload your resumes to the Resume Vault.
+Multi-page Workday wizards sometimes delay inputs; give it a moment, then click Fill again.
 
-Visit a supported job application page:
-
-Auto-run: ApplyEasy will fill it automatically.
-
-Manual: Use the popup, context menu, or shortcut Alt+F.
-
-Select your resume in the file picker when prompted.
-
-📝 Supported Sites
-Greenhouse
-
-Lever
-
-Workday
-(More ATS coming soon — see Contributing)
-
-⚠ Notes & Limitations
-File uploads cannot be automated due to browser security restrictions — you must select the file manually when prompted.
-
-Auto-run is only enabled for listed supported sites.
-
-Fields are matched heuristically — always review before submitting.
-
-🤝 Contributing
-Want to add support for more Applicant Tracking Systems (ATS)?
-
-Fork the repo.
-
-Add the site’s domain to manifest.json → host_permissions.
-
-Extend the form-filling logic in content.js.
-
-Submit a Pull Request.
 
 📄 License
 MIT License © Eric Hilerio
