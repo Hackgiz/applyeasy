@@ -1,60 +1,36 @@
-ApplyEasy – Stress-Free, Breezy Resume Autofiller
-by Eric Hilerio
+# ApplyEasy-Ready
 
-A lightweight browser extension that autofills job application forms using a profile you set once.
-Works on Greenhouse, Lever, and Workday — with support for more ATS coming soon.
+One-click autofill for common job portals.
 
-🚀 What’s new
-Bundled parsers (no setup): pdf.js + pdf.worker and mammoth.browser included locally — just load the extension and go.
+**Supports:** Greenhouse · Lever · Workday (external/myworkdayjobs) · iCIMS · Taleo  
+**Extras:** Resume/Cover upload helper · Theme toggle · Keyboard shortcut (Alt+Shift+A)
 
-Upload once → Fill anywhere: Upload a PDF or DOCX resume in the popup, save, then click Update my information & Fill.
+## Install (unpacked)
+1. Download the latest zip from **Releases**.
+2. Unzip → `chrome://extensions` → enable **Developer Mode** → **Load unpacked** → select the folder with `manifest.json`.
+3. Open the popup, enter your profile, **Save**, then use **Autofill Page** or press **Alt+Shift+A**.
 
-Floating on-page button: A small “Update my information” bubble appears on application pages for one-click fill.
+## Using the upload helper
+Click **Attach Resume** / **Attach Cover** in the popup. We highlight the right file input and open the chooser (you pick the file).
 
-ATS coverage: Tuned heuristics for Greenhouse, Lever, Workday, plus many generic forms.
+## Theme
+Toggle Light/Dark in the popup header. Choice is saved and used for small on-page toasts, too.
 
-Best-effort file attach: Tries to attach your resume to file inputs via drag-and-drop (falls back to manual if the site blocks it).
+## Roadmap
+- SAP SuccessFactors adapter
+- BrassRing adapter
+- Workday per-employer tweaks
 
-Local-only privacy: All data stays in browser local storage. No network calls, no trackers.
+## Contributing
+- File issues with: portal type, URL pattern (domain), screenshot, and which fields weren’t filled.
+- PRs welcome! Keep adapters lean and add sites under `adapters/`.
 
-🛠 How it works
-Open the extension → Upload resume (PDF/DOCX).
-
-Review the extracted fields and Save.
-
-On a job application page, click the floating button or use the popup’s Update my information & Fill.
-
-You’ll see a toast like “ApplyEasy filled 18 field(s)”.
-
-📦 Install / Update (Chrome)
-Download the ZIP from this release and unzip it.
-
-Go to chrome://extensions → enable Developer mode.
-
-Click Load unpacked → select the unzipped folder.
-
-(Optional) Pin the extension to your toolbar.
-
-⚠ Notes / Limitations
-Some sites block programmatic file selection. Text fields will fill; you may still need to click the file picker to attach the resume file.
-
-If a form loads inside an iframe or SPA stepper, wait a second after opening the form before clicking Fill.
-
-✅ Verified on
-Greenhouse app pages
-
-Lever application forms
-
-Workday job app flows (after starting application)
-
-Several generic HTML forms
-
-🔧 Known issues
-Very unusual label text or custom widgets may need a second click or minor manual edits.
-
-Multi-page Workday wizards sometimes delay inputs; give it a moment, then click Fill again.
-
-
+## Dev quickstart
+```bash
+# clone and run
+git clone https://github.com/<you>/applyeasy-ready.git
+cd applyeasy-ready
+# edit in src; load the root folder as unpacked in chrome://extensions
 📄 License
 MIT License © Eric Hilerio
 
